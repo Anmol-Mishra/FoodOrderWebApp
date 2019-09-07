@@ -1,0 +1,15 @@
+com\fico\ps\foodapp\repository\VegRepository.class
+com\fico\ps\foodapp\service\VegService.class
+com\fico\ps\foodapp\exception\ExceptionController.class
+com\fico\ps\foodapp\service\UserService.class
+com\fico\ps\foodapp\repository\UserRepository.class
+com\fico\ps\foodapp\controller\VegController.class
+com\fico\ps\foodapp\model\NonVegMenu.class
+com\fico\ps\foodapp\model\User.class
+com\fico\ps\foodapp\service\NonVegService.class
+com\fico\ps\foodapp\controller\NonVegController.class
+com\fico\ps\foodapp\model\VegMenu.class
+com\fico\ps\foodapp\repository\NonVegRepository.class
+com\fico\ps\foodapp\controller\UserController.class
+com\fico\ps\foodapp\exception\UserIsNotRegisteredException.class
+com\fico\ps\foodapp\FoodAppTrainingApplication.class
