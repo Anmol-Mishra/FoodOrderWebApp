@@ -1,0 +1,2 @@
+# FoodOrderWebApp
+This is a foodOrderingWebApplication developed using SpringBoot as backend (MVC) and Angularjs holding the frontend. Springboot and Angular together makes a powerful combination to create beautiful and functional webapp with almost all the functionality, a subset of which is implemented here. The project has used JPA and Hibernate as dependencies in SpringBoot to make it easier to interact with MYSQL database while in the frontend the Angular uses Material design UI in order to beautify and increase the responsiveness of the WebApp.
