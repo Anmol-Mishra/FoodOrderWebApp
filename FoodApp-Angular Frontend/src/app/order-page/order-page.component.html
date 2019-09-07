@@ -1,0 +1,194 @@
+<mat-toolbar color="accent" class="example-toolbar">
+    <h1 class="example-app-name">Food Ordering App</h1>
+  </mat-toolbar>
+
+<p>Welcome {{name}}. We have the following options in our menu: 
+  Kindly select according to your taste and apetite.
+  <span><h3>Pet Bharega Neeyat nahi :) </h3></span>
+</p>
+
+<h4>Kya khaoge {{name}}?</h4>
+
+
+
+<button mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="showVegList()">Vegetarian</button>
+  <button mat-menu-item (click)="showNonVegList()">Non Vegetarian</button>
+</mat-menu>
+
+
+
+
+
+
+
+<div class = "container" *ngIf = "boolVeg">
+<table mat-table [dataSource]="vegItems" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef><h3>Name</h3></th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Cost Per Piece">
+      <th mat-header-cell *matHeaderCellDef><h3>costPerPiece</h3></th>
+      <td mat-cell *matCellDef="let element"> {{element.costPerPiece}} </td>
+    </ng-container>
+  
+  
+  
+    <ng-container matColumnDef="Item Quantity">
+    
+      <th mat-header-cell *matHeaderCellDef><h3>Quantity</h3></th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Total Cost of this">
+      <th mat-header-cell *matHeaderCellDef><h3>Cost</h3></th>
+      <td mat-cell *matCellDef="let element"> {{element.totalCost}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Add">
+      <th mat-header-cell *matHeaderCellDef><h3>Add</h3></th>
+      <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="accent" (click)="add(element)">+</button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="Remove">
+        <th mat-header-cell *matHeaderCellDef><h3>Remove</h3></th>
+        <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="accent" (click)="subtract(element)">-</button></td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+
+
+
+
+<div class = "container" *ngIf = "boolNonVeg">
+    <table mat-table [dataSource]="nonVegItems" class="mat-elevation-z8">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><h3>Name</h3></th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Cost Per Piece">
+          <th mat-header-cell *matHeaderCellDef><h3>costPerPiece</h3></th>
+          <td mat-cell *matCellDef="let element"> {{element.costPerPiece}} </td>
+        </ng-container>
+      
+      
+      
+        <ng-container matColumnDef="Item Quantity">
+        
+          <th mat-header-cell *matHeaderCellDef><h3>Quantity</h3></th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="Total Cost of this">
+          <th mat-header-cell *matHeaderCellDef><h3>Cost</h3></th>
+          <td mat-cell *matCellDef="let element"> {{element.totalCost}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="Add">
+          <th mat-header-cell *matHeaderCellDef><h3>Add</h3></th>
+          <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="accent" (click)="add(element)">+</button></td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Remove">
+            <th mat-header-cell *matHeaderCellDef><h3>Remove</h3></th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="accent" (click)="subtract(element)">-</button></td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+<div class = "container">
+
+    <mat-card class="result" *ngIf = "totalCost">
+        <mat-card-content>
+          <!-- <h2 class="example-h2">Do you want an eco friedly bag?</h2> -->
+      
+          <section class="example-section">
+            <mat-slide-toggle
+                class="example-margin"
+                [color]="color"
+                (click) = "Slider()">
+                Bag-Eco friendly
+            </mat-slide-toggle>
+          </section>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+
+<div class = "alert" *ngIf = "slider">You are an environment superhero.</div>
+
+
+
+
+  
+
+<div class = "container" *ngIf = "totalCost" >
+
+    <div><span >Total Cost = {{totalCost}}</span></div>
+    
+    
+    <div><button mat-raised-button color = "accent" (click)="openDialogBox()">Place Order</button></div>
+    </div>
+    
+   
+    
+
+
+
+
+
+
+
+
+    <div *ngIf = "showDialog">
+    <h2 mat-dialog-title>{{title}}</h2>
+    <mat-dialog-actions>
+    <button class="button"(click)="close()">Close</button>
+    <button class="button" (click)="save()">Save</button>
+    </mat-dialog-actions>
+    </div>
+    
+
+
+
+
+
+    

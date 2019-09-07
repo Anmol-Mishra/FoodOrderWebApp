@@ -1,0 +1,61 @@
+<!-- <p>new-user-dialog-box works!</p>
+First name:<br>
+<input type="text" [(ngModel)]="username" placeholder="Enter Name"><br>
+Phone number:<br>
+<input type="text" [(ngModel)]="phoneNumber" placeholder="phn. No."><br><br>
+<button type="submit" value="Submit" (click)="onSubmit()">Submit</button> -->
+<!-- <div class = "main-div">
+<mat-card >
+<p>
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" [(ngModel)]="username">
+      <mat-hint>Please enter your name</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="Phone Number" [(ngModel)] = "phoneNumber">
+      <mat-hint>Please enter your phone number</mat-hint>
+    </mat-form-field>
+  </p>
+</mat-card>
+</div> -->
+
+
+
+
+<div class = "main-div">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Sign Up</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+          <td><mat-form-field class="example-full-width">
+              <!-- <input matInput placeholder="Phone Number" type="number" ngMinlength=10 ngMaxlength=10 [(ngModel)]="phoneNumber" required> -->
+            <input matInput placeholder="Phone Number" type="text" ng-pattern="[789][0-9]{9}" [(ngModel)]="phoneNumber" name="Phn. No." required>
+          </mat-form-field></td>
+        </tr></table>
+      </form>
+      <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+      
+        <div class="example-button-row">
+          <button  mat-raised-button (click) = "onSubmit()"  color="primary">Register</button>
+        </div>
+      </mat-card-actions>
+  </mat-card>
+  </div>

@@ -1,0 +1,53 @@
+<!-- <button mat-raised-button type="button" (click) = "newUserDialogBox()" color = "accent">New User</button>
+<br>
+<br>
+<button mat-raised-button type="button" (click)="existingUserDialogBox()" color = "accent">Existing User</button>
+
+<div *ngIf = "newUser">
+<app-new-user-dialog-box></app-new-user-dialog-box>
+</div>
+
+<div *ngIf = "existingUser">
+  <app-existing-user-dialog-box></app-existing-user-dialog-box>
+</div> -->
+
+
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar color="accent" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Food Ordering App</h1>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+            <button mat-flat-button (click) = "existingUserDialogBox()">Existing User</button>
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+        </mat-nav-list>
+        <mat-nav-list>
+            <button mat-flat-button (click) = "newUserDialogBox()">New User</button>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <h3>Welcome to food Ordering App Sir. We promise to fill your stomach with delicacies and your heart with love</h3>
+          
+        
+  <div *ngIf = "newUser">
+      <app-new-user-dialog-box></app-new-user-dialog-box>
+      </div>
+      
+    <div *ngIf = "existingUser">
+        <app-existing-user-dialog-box></app-existing-user-dialog-box>
+    </div> 
+        
+        
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+
+      

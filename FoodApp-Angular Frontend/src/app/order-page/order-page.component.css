@@ -1,0 +1,66 @@
+
+.result{
+  width:720px;
+}
+table {
+    width: 750px;
+  }
+
+.container{
+    padding-top:1cm;
+}
+
+h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 10px;
+  }
+
+
+  /* .alert{
+    
+    width:400px;
+    margin:1cm;
+  } */
+  .alert {
+    margin-top: 2px;
+    width:400px;
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 18px;
+    color:black;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color:pink ;
+    border: 1px solid deeppink;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    }
+    .alert-heading {
+    color: inherit;
+    }
+    .alert .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    line-height: 18px;
+    }

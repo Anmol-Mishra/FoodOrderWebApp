@@ -1,0 +1,29 @@
+<!-- <p>existing-user-dialog-box works!</p>
+Phone number:<br>
+<input type="text" [(ngModel)]="phoneNumber" placeholder="phn. No."><br><br>
+<button type="submit" value="Submit" (click)=onSubmit()>Submit</button>
+ -->
+
+ <div class = "main-div">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+
+ 
+
+    <mat-form-field appearance="standard">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="Phone Number"  type="text" ng-pattern="[789][0-9]{9}" [(ngModel)]="phoneNumber" required>
+      <mat-hint>Registered mobile number</mat-hint>
+    </mat-form-field>   
+  
+<br><br>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click) = "onSubmit()">Submit</button>
+  </div>
+  <div class = "alert" *ngIf = "showErrorBool"><p>This number is not registered.
+    Kindly Enter as a new user.</p></div>
+</mat-card>
+
+</div>
